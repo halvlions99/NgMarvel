@@ -4,4 +4,4 @@
 ## Description
 Simple demo for NGRX
 
-This is used for demo purposes only.
+This is used for demo purposes only. 

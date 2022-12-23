@@ -1,0 +1,17 @@
+<div class="favorite">
+  <mat-dialog-content>
+    <div fxLayout="row" fxLayoutGap="0.5rem" fxLayoutAlign="start center">
+      <img class="favorite__logo" src="{{ data.thumbnail.path }}.{{ data.thumbnail.extension }}">
+      <p>Would you like to add <i>{{ data.name }}</i> to your favorites??</p>
+    </div>
+    <div fxLayout="column" fxLayoutGap="0.5rem">
+      <mat-divider [inset]="true"></mat-divider>
+      <p>This component will 'dispatch' an action called <b>'saveFavoriteCharacterClick'</b> with the Marvel character data.</p>
+      <img class="favorite__ngrx-image" src="../../assets/images/component-action.JPG">
+    </div>
+    </mat-dialog-content>
+  <div mat-dialog-actions fxLayout="row" fxLayoutGap="0.5rem" fxLayoutAlign="end center">
+    <button color="accent" mat-button (click)="onCancel()">CANCEL</button>
+    <button color="primary" mat-raised-button (click)="onAdd()" cdkFocusInitial>ADD CHARACTER</button>
+  </div>
+</div>

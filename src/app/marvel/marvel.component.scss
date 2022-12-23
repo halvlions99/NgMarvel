@@ -1,0 +1,45 @@
+.character {
+
+  // mat-form-field {
+  //   width: 100%;
+  // }
+
+  .mat-row {
+    padding: 0.5rem 0;
+  }
+
+  table {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    padding: 20px 0 0 0;
+  }
+
+  mat-paginator {
+    border-radius: 0 0 5px 5px;
+    padding: 0 0 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px
+  }
+
+  &__description {
+    max-width: 800px;
+  }
+
+  tr td {
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  tr th {
+    padding: 1rem;
+  }
+
+  &__logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+}

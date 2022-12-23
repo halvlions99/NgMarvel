@@ -1,0 +1,67 @@
+<div class="marvel" fxLayout="column" fxLayoutGap="1rem" class="character">
+  <div fxLayout="row">
+    <a mat-button color="primary" routerLink="/dashboard/learning-center">
+      <mat-icon>arrow_back_ios</mat-icon>
+      RETURN TO LEARNING CENTER
+    </a>
+  </div>
+  <div fxLayout="column" fxLayoutGap="1rem">
+
+    <mat-card class="learning-center__card">
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="space-between center">
+          <mat-form-field color="accent" floatPlaceholder="never" fxFlex="100">
+            <input matInput #filter placeholder="Enter a Marvel character name" name="filter" [(ngModel)]="filterText"
+              (keyup)="applyFilter($event)">
+          </mat-form-field>
+        </div>
+        <mat-progress-bar *ngIf="(isLoading$ | async)" mode="indeterminate"></mat-progress-bar>
+      </mat-card-content>
+    </mat-card>
+
+    <div *ngIf="dataSource.length > 0;">
+      <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
+
+        <ng-container matColumnDef="thumbnail">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <img class="character__logo" src="{{ row.thumbnail.path }}.{{ row.thumbnail.extension }}">
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let row" >
+            {{ row.name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef class="character__description">Description</th>
+          <td mat-cell *matCellDef="let row" class="character__description">
+            <div class="ellipsis">{{ row.description }}</div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="links">
+          <th mat-header-cell *matHeaderCellDef>Links</th>
+          <td mat-cell *matCellDef="let row">
+            <div *ngFor="let link of row.urls">
+              <a mat-button color="accent" href="{{link.url}}" target="_blank" (click)="$event.stopPropagation()">
+                <mat-icon>open_in_new</mat-icon>
+                {{ LinkType[link.type] }}
+              </a>
+            </div>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="saveFavorite(row)">
+        </tr>
+
+      </table>
+      <mat-paginator color="accent" [length]="pageTotalCount" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)" ></mat-paginator>
+    </div>
+  </div>
+</div>

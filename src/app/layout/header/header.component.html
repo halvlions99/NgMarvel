@@ -1,0 +1,20 @@
+<div class="header" fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="space-between">
+  <div fxLayout="row" fxLayoutGap="1rem">
+    <a mat-button color="primary" routerLink="../">
+      <img class="header__logo" src="http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg">
+    </a>
+    <div class="header__title">
+      <div fxFlexFill fxLayout="column" fxLayoutAlign="center center" >
+        NGRX, RXJS & MARVEL
+      </div>
+    </div>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div *ngIf="(favoritesCount$ | async) as favCount; else noFavs">
+      <mat-icon color="accent" *ngIf="favCount > 0" [matBadge]="favCount" matBadgeColor="warn">favorite</mat-icon>
+    </div>
+    <ng-template #noFavs>
+      <mat-icon color="accent">favorite</mat-icon>
+    </ng-template>
+  </div>
+</div>

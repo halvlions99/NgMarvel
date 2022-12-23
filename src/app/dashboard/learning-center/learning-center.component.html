@@ -1,0 +1,55 @@
+<div class="learning-center" fxLayout="column" fxLayoutGap="1rem">
+  <div fxLayout="row">
+    <a mat-button color="primary" routerLink="../">
+      <mat-icon>arrow_back_ios</mat-icon>
+      RETURN TO DASHBOARD
+    </a>
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+    <mat-card class="learning-center__card">
+      <img mat-card-image src="../../assets/images/ngrx2.png">
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutGap=".5rem" fxLayoutAlign="center center">
+          <div>
+            What exactly is NGRX????
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <button mat-button>LEARN MORE</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="learning-center__card">
+      <img mat-card-image src="../../assets/images/rxjs2.png">
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutGap=".5rem" fxLayoutAlign="center center">
+          <div>
+            What exactly is RXJS????
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <button mat-button>LEARN MORE</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="learning-center__card">
+      <img mat-card-image src="../../assets/images/marvel2.jpg">
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutGap=".5rem" fxLayoutAlign="center center">
+          <div>
+            What exactly is MARVEL???? Just kidding we all know MARVEL but lets see everything in action.
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <button mat-button (click)="navigateTo('marvel')">ACTION</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
